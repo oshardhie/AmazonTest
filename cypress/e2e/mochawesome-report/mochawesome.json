@@ -1,0 +1,426 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 15,
+    "passes": 0,
+    "pending": 0,
+    "failures": 15,
+    "start": "2023-02-09T19:41:22.285Z",
+    "end": "2023-02-09T19:41:22.340Z",
+    "duration": 55,
+    "testsRegistered": 15,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4d85476b-2d18-4617-bcda-f1c25e76a7da",
+      "title": "",
+      "fullFile": "C:\\Users\\User\\Desktop\\Cypress\\AmazonTest\\cypress\\e2e\\amazonShoppingCart.cy.js",
+      "file": "\\amazonShoppingCart.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5801bcb0-61b7-4e79-a5aa-b0f7c5094cd1",
+          "title": "Amazon Book Search",
+          "fullFile": "C:\\Users\\User\\Desktop\\Cypress\\AmazonTest\\cypress\\e2e\\amazonShoppingCart.cy.js",
+          "file": "\\amazonShoppingCart.cy.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Home - Visits Amazon Homepage and Selects Books Category",
+              "fullTitle": "Amazon Book Search Home - Visits Amazon Homepage and Selects Books Category",
+              "timedOut": false,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.amazon.com/')\ncy.get('#searchDropdownBox')\n  .should('exist')\n  .select('Books', { force: true });",
+              "err": {
+                "message": "ReferenceError: cy is not defined",
+                "estack": "ReferenceError: cy is not defined\n    at Context.<anonymous> (amazonShoppingCart.cy.js:7:5)\n    at process.processImmediate (node:internal/timers:476:21)",
+                "diff": null
+              },
+              "uuid": "afc87ab4-327f-4c20-894d-93c54e4293de",
+              "parentUUID": "5801bcb0-61b7-4e79-a5aa-b0f7c5094cd1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Home - Searches for Automation Books",
+              "fullTitle": "Amazon Book Search Home - Searches for Automation Books",
+              "timedOut": false,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#twotabsearchtextbox')\n  .should('exist')\n  .type('Automation');\ncy.get('#nav-search-submit-button').click();",
+              "err": {
+                "message": "ReferenceError: cy is not defined",
+                "estack": "ReferenceError: cy is not defined\n    at Context.<anonymous> (amazonShoppingCart.cy.js:14:5)\n    at process.processImmediate (node:internal/timers:476:21)",
+                "diff": null
+              },
+              "uuid": "7e6d12e0-5d19-48b1-897a-98e3964ff1ca",
+              "parentUUID": "5801bcb0-61b7-4e79-a5aa-b0f7c5094cd1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Search - Set rating to 4 STAR OR ABOVE",
+              "fullTitle": "Amazon Book Search Search - Set rating to 4 STAR OR ABOVE",
+              "timedOut": false,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#reviewsRefinements').find('[aria-label=\"4 Stars & Up\"]').click({ force: true });",
+              "err": {
+                "message": "ReferenceError: cy is not defined",
+                "estack": "ReferenceError: cy is not defined\n    at Context.<anonymous> (amazonShoppingCart.cy.js:23:5)\n    at process.processImmediate (node:internal/timers:476:21)",
+                "diff": null
+              },
+              "uuid": "46a1f710-bfdb-443f-a50a-47b9a1c512fc",
+              "parentUUID": "5801bcb0-61b7-4e79-a5aa-b0f7c5094cd1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Search - Set language filter to ENGLISH",
+              "fullTitle": "Amazon Book Search Search - Set language filter to ENGLISH",
+              "timedOut": false,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#filters').contains('English').click({ force: true });",
+              "err": {
+                "message": "ReferenceError: cy is not defined",
+                "estack": "ReferenceError: cy is not defined\n    at Context.<anonymous> (amazonShoppingCart.cy.js:27:5)\n    at process.processImmediate (node:internal/timers:476:21)",
+                "diff": null
+              },
+              "uuid": "1d5b928e-7ee3-4c55-8244-14bfd09de61d",
+              "parentUUID": "5801bcb0-61b7-4e79-a5aa-b0f7c5094cd1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Search - Capture name and navigates to 2nd result",
+              "fullTitle": "Amazon Book Search Search - Capture name and navigates to 2nd result",
+              "timedOut": false,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.s-result-item:nth-of-type(3) .a-link-normal > .a-size-medium')\n      .should('exist')\n      .invoke('text')\n      .then(title => {\n        bookNameInSearchPage = title.trim();\n        cy.log(`Book Name in Search Page: ${bookNameInSearchPage}`);\n      });\n    cy.get('.s-result-item:nth-of-type(3) .a-link-normal > .a-size-medium')\n      .should('exist')\n      .click();",
+              "err": {
+                "message": "ReferenceError: cy is not defined",
+                "estack": "ReferenceError: cy is not defined\n    at Context.<anonymous> (amazonShoppingCart.cy.js:32:5)\n    at process.processImmediate (node:internal/timers:476:21)",
+                "diff": null
+              },
+              "uuid": "5b37eccb-e765-4c52-88b9-7175b0285408",
+              "parentUUID": "5801bcb0-61b7-4e79-a5aa-b0f7c5094cd1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Product - Captures Book Name from Product Page",
+              "fullTitle": "Amazon Book Search Product - Captures Book Name from Product Page",
+              "timedOut": false,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#productTitle')\n  .should('exist')\n  .invoke('text')\n  .then(title => {\n    bookNameInProductPage = title.trim();\n    cy.log(`Book Name in Product Page: ${bookNameInProductPage}`);\n  });",
+              "err": {
+                "message": "ReferenceError: cy is not defined",
+                "estack": "ReferenceError: cy is not defined\n    at Context.<anonymous> (amazonShoppingCart.cy.js:48:5)\n    at process.processImmediate (node:internal/timers:476:21)",
+                "diff": null
+              },
+              "uuid": "c4f8fd89-e5f4-4311-ae8a-ee296e4e60a8",
+              "parentUUID": "5801bcb0-61b7-4e79-a5aa-b0f7c5094cd1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Product - Verifies if Book Names in Search and Product Page are Same",
+              "fullTitle": "Amazon Book Search Product - Verifies if Book Names in Search and Product Page are Same",
+              "timedOut": false,
+              "duration": 1,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// cy.log(`Book Name in search Page: ${bookNameInSearchPage}`);\n// cy.log(`Book Name in Product Page: ${bookNameInProductPage}`);\nexpect(bookNameInSearchPage).to.equal(bookNameInProductPage)",
+              "err": {
+                "message": "ReferenceError: expect is not defined",
+                "estack": "ReferenceError: expect is not defined\n    at Context.<anonymous> (amazonShoppingCart.cy.js:60:5)\n    at process.processImmediate (node:internal/timers:476:21)",
+                "diff": null
+              },
+              "uuid": "9c851d20-a39e-495a-8298-fe23d68963c9",
+              "parentUUID": "5801bcb0-61b7-4e79-a5aa-b0f7c5094cd1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Product - Captures Unit Price",
+              "fullTitle": "Amazon Book Search Product - Captures Unit Price",
+              "timedOut": false,
+              "duration": 1,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.a-column > .a-price > [aria-hidden=\"true\"]')\n  .should('exist')\n  .invoke('text')\n  .then(text => {\n    unitPrice = text;\n    cy.log(`Unit Price: ${unitPrice}`);\n  });",
+              "err": {
+                "message": "ReferenceError: cy is not defined",
+                "estack": "ReferenceError: cy is not defined\n    at Context.<anonymous> (amazonShoppingCart.cy.js:65:5)\n    at process.processImmediate (node:internal/timers:476:21)",
+                "diff": null
+              },
+              "uuid": "915a7fd5-7c1d-4d40-ab8b-05d67ec06e31",
+              "parentUUID": "5801bcb0-61b7-4e79-a5aa-b0f7c5094cd1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Product - Validate and increase the quantity to 2",
+              "fullTitle": "Amazon Book Search Product - Validate and increase the quantity to 2",
+              "timedOut": false,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#quantity')\n  .then(($input) => {\n    if ($input.is(':enabled')) {\n      cy.get('#quantity').select('2',{ force: true });\n    } else {\n      cy.log('Item is not in stock');\n    }\n  })",
+              "err": {
+                "message": "ReferenceError: cy is not defined",
+                "estack": "ReferenceError: cy is not defined\n    at Context.<anonymous> (amazonShoppingCart.cy.js:76:5)\n    at process.processImmediate (node:internal/timers:476:21)",
+                "diff": null
+              },
+              "uuid": "ad0b644a-9fa8-4f3a-bf56-ec839bcbaa87",
+              "parentUUID": "5801bcb0-61b7-4e79-a5aa-b0f7c5094cd1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Product - Add product to cart and navigate to card",
+              "fullTitle": "Amazon Book Search Product - Add product to cart and navigate to card",
+              "timedOut": false,
+              "duration": 1,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#add-to-cart-button').click();\ncy.get('#nav-cart').click();",
+              "err": {
+                "message": "ReferenceError: cy is not defined",
+                "estack": "ReferenceError: cy is not defined\n    at Context.<anonymous> (amazonShoppingCart.cy.js:87:5)\n    at process.processImmediate (node:internal/timers:476:21)",
+                "diff": null
+              },
+              "uuid": "ff6fec11-574f-4cb6-8ec9-a72cbea1f033",
+              "parentUUID": "5801bcb0-61b7-4e79-a5aa-b0f7c5094cd1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cart - Validate Product Name",
+              "fullTitle": "Amazon Book Search Cart - Validate Product Name",
+              "timedOut": false,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.a-truncate-cut')\n      .should('exist')\n      .invoke('text')\n      .then(text => {\n        expect(bookNameInSearchPage).to.equal(text.trim());\n      });",
+              "err": {
+                "message": "ReferenceError: cy is not defined",
+                "estack": "ReferenceError: cy is not defined\n    at Context.<anonymous> (amazonShoppingCart.cy.js:96:5)\n    at process.processImmediate (node:internal/timers:476:21)",
+                "diff": null
+              },
+              "uuid": "04125fbc-c27c-4a1e-b83c-de3e3d3ef1e3",
+              "parentUUID": "5801bcb0-61b7-4e79-a5aa-b0f7c5094cd1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cart - Validate Price",
+              "fullTitle": "Amazon Book Search Cart - Validate Price",
+              "timedOut": false,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#sc-subtotal-amount-activecart > .a-size-medium')\n  .should('exist')\n  .invoke('text')\n  .then(subtotal => {\n    let calculatedSubTotal = 2 * Number(unitPrice.replace(/[^0-9\\.]+/g,\"\"));\n    let extractedSubTotal =  Number(subtotal.replace(/[^0-9\\.]+/g,\"\"));\n    expect(calculatedSubTotal).to.equal(extractedSubTotal);\n  });",
+              "err": {
+                "message": "ReferenceError: cy is not defined",
+                "estack": "ReferenceError: cy is not defined\n    at Context.<anonymous> (amazonShoppingCart.cy.js:106:5)\n    at process.processImmediate (node:internal/timers:476:21)",
+                "diff": null
+              },
+              "uuid": "0d4faf7d-0f47-4cd4-8924-0134a62b2777",
+              "parentUUID": "5801bcb0-61b7-4e79-a5aa-b0f7c5094cd1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cart - Validate Quantity",
+              "fullTitle": "Amazon Book Search Cart - Validate Quantity",
+              "timedOut": false,
+              "duration": 1,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.a-dropdown-prompt')\n  .should('exist')\n  .invoke('text')\n  .then(qty => {\n           expect(2).to.equal(Number(qty));\n  });",
+              "err": {
+                "message": "ReferenceError: cy is not defined",
+                "estack": "ReferenceError: cy is not defined\n    at Context.<anonymous> (amazonShoppingCart.cy.js:118:5)\n    at process.processImmediate (node:internal/timers:476:21)",
+                "diff": null
+              },
+              "uuid": "6f2ac41e-3091-4840-9409-69df378669e9",
+              "parentUUID": "5801bcb0-61b7-4e79-a5aa-b0f7c5094cd1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cart - Clear Cart",
+              "fullTitle": "Amazon Book Search Cart - Clear Cart",
+              "timedOut": false,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.sc-action-delete > .a-declarative > .a-color-link').click();",
+              "err": {
+                "message": "ReferenceError: cy is not defined",
+                "estack": "ReferenceError: cy is not defined\n    at Context.<anonymous> (amazonShoppingCart.cy.js:129:5)\n    at process.processImmediate (node:internal/timers:476:21)",
+                "diff": null
+              },
+              "uuid": "5c1b370e-ac5c-46f0-8889-fbf535c1953c",
+              "parentUUID": "5801bcb0-61b7-4e79-a5aa-b0f7c5094cd1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Cart - Verify amount after clear the cart",
+              "fullTitle": "Amazon Book Search Cart - Verify amount after clear the cart",
+              "timedOut": false,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#sc-subtotal-amount-activecart > .a-size-medium')\n  .should('exist')\n  .invoke('text')\n  .then(subtotal => {\n    let zeroSubTotal =  Number(subtotal.replace(/[^0-9\\.]+/g,\"\"));\n    expect(0).to.equal(zeroSubTotal);\n  });",
+              "err": {
+                "message": "ReferenceError: cy is not defined",
+                "estack": "ReferenceError: cy is not defined\n    at Context.<anonymous> (amazonShoppingCart.cy.js:134:5)\n    at process.processImmediate (node:internal/timers:476:21)",
+                "diff": null
+              },
+              "uuid": "901d0879-5033-4bc5-bab6-f8ee34270528",
+              "parentUUID": "5801bcb0-61b7-4e79-a5aa-b0f7c5094cd1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "afc87ab4-327f-4c20-894d-93c54e4293de",
+            "7e6d12e0-5d19-48b1-897a-98e3964ff1ca",
+            "46a1f710-bfdb-443f-a50a-47b9a1c512fc",
+            "1d5b928e-7ee3-4c55-8244-14bfd09de61d",
+            "5b37eccb-e765-4c52-88b9-7175b0285408",
+            "c4f8fd89-e5f4-4311-ae8a-ee296e4e60a8",
+            "9c851d20-a39e-495a-8298-fe23d68963c9",
+            "915a7fd5-7c1d-4d40-ab8b-05d67ec06e31",
+            "ad0b644a-9fa8-4f3a-bf56-ec839bcbaa87",
+            "ff6fec11-574f-4cb6-8ec9-a72cbea1f033",
+            "04125fbc-c27c-4a1e-b83c-de3e3d3ef1e3",
+            "0d4faf7d-0f47-4cd4-8924-0134a62b2777",
+            "6f2ac41e-3091-4840-9409-69df378669e9",
+            "5c1b370e-ac5c-46f0-8889-fbf535c1953c",
+            "901d0879-5033-4bc5-bab6-f8ee34270528"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
