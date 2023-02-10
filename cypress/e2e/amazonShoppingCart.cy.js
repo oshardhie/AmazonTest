@@ -62,7 +62,7 @@ describe('Amazon Book Search', () => {
   });
 
   it('Product - Captures Unit Price', () => {
-    cy.get('.a-column > .a-price > [aria-hidden="true"]')
+    cy.get('#price')
       .should('exist')
       .invoke('text')
       .then(text => {
